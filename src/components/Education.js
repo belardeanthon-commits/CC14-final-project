@@ -4,13 +4,13 @@ const Education = ({ darkMode }) => {
   const educationData = [
     {
       degree: "Bachelor of Science in Information Technology",
-      school: "Your University Name",
+      school: "University of the Cordilleras",
       year: "2020 - 2024",
       description: "Focused on web development, software engineering, and database management."
     },
     {
       degree: "Senior High School - ICT Strand",
-      school: "Your High School Name",
+      school: "Santiago Catholic School",
       year: "2018 - 2020",
       description: "Specialized in Information and Communications Technology."
     }
