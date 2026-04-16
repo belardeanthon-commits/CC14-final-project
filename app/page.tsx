@@ -15,7 +15,7 @@ export default function Home() {
   };
 
   return (
-    <div className={`min-h-screen ${darkMode ? 'bg-gray-900 text-white' : 'bg-gray-50 text-gray-900'} transition-colors`}>
+   <div className="bg-[#0f172a] text-white min-h-screen px-6 md:px-20">
       {/* Header */}
       <header className={`sticky top-0 z-50 ${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg transition-colors`}>
         <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">

@@ -1,4 +1,5 @@
-import React from 'react';
+"use client";
+import React from "react";
 
 const Education = ({ darkMode }) => {
   const educationData = [
@@ -6,39 +7,68 @@ const Education = ({ darkMode }) => {
       degree: "Bachelor of Science in Information Technology",
       school: "University of the Cordilleras",
       year: "2020 - 2024",
-      description: "Focused on web development, software engineering, and database management."
+      description: "Focused on web development, software engineering, and database management. GPA: 3.8/4.0",
+      icon: "🎓"
     },
     {
       degree: "Senior High School - ICT Strand",
       school: "Santiago Catholic School",
       year: "2018 - 2020",
-      description: "Specialized in Information and Communications Technology."
+      description: "Specialized in Information and Communications Technology with focus on programming and IT fundamentals.",
+      icon: "📚"
     }
   ];
 
   return (
-    <section className="my-12">
-      <h2 className="text-3xl font-semibold text-blue-600 mb-6 border-b-2 border-blue-600 pb-2">
-        Education
-      </h2>
-      <div className="space-y-6">
-        {educationData.map((edu, index) => (
-          <div
-            key={index}
-            className={`${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'} rounded-xl shadow-lg p-6 border-l-4 border-l-blue-600 hover:shadow-xl transition-shadow`}
-          >
-            <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2">
-              <div>
-                <h3 className="text-xl font-bold text-blue-600">{edu.degree}</h3>
-                <p className={`text-lg ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>{edu.school}</p>
+    <section className="py-20 px-4">
+      <div className="max-w-6xl mx-auto">
+        
+        {/* Section Title */}
+        <div className="mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold">
+            My <span className="text-cyan-400">Education</span>
+          </h2>
+          <div className="w-20 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 mt-3 rounded-full"></div>
+        </div>
+
+        {/* Education Cards */}
+        <div className="space-y-6">
+          {educationData.map((edu, index) => (
+            <div
+              key={index}
+              className="group bg-slate-800/50 border border-slate-700 rounded-xl p-8 hover:border-cyan-400/50 hover:shadow-lg hover:shadow-cyan-400/10 transition-all duration-300 relative overflow-hidden"
+            >
+              
+              {/* Gradient background on hover */}
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/0 via-cyan-400/5 to-blue-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+              <div className="relative">
+                {/* Header with icon and year */}
+                <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-4">
+                  <div className="flex gap-4">
+                    <span className="text-4xl">{edu.icon}</span>
+                    <div>
+                      <h3 className="text-xl font-bold text-white mb-1">
+                        {edu.degree}
+                      </h3>
+                      <p className="text-cyan-400 font-semibold text-lg">
+                        {edu.school}
+                      </p>
+                    </div>
+                  </div>
+                  <span className="px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-400 border border-cyan-400/30 rounded-lg text-sm font-bold whitespace-nowrap">
+                    {edu.year}
+                  </span>
+                </div>
+
+                {/* Description */}
+                <p className="text-gray-300 leading-relaxed">
+                  {edu.description}
+                </p>
               </div>
-              <span className={`${darkMode ? 'bg-blue-900' : 'bg-blue-100'} text-blue-600 px-4 py-1 rounded-full text-sm font-medium whitespace-nowrap`}>
-                {edu.year}
-              </span>
             </div>
-            <p className={`mt-3 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>{edu.description}</p>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
