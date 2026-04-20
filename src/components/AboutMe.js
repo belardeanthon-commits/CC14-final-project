@@ -37,7 +37,8 @@ const AboutMe = ({ darkMode }) => {
  
             {/* Subtitle */}
             <p className="text-xl text-cyan-400 font-semibold mt-2 tracking-wide">
-              Anthon Rovic Belarde
+              Anthon Rovic Castillo
+              
             </p>
  
             {/* Main tagline */}
